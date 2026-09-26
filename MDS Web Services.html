@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Marcus Surjopolos Web Services — Web Design & Local SEO for Atlanta Businesses</title>
+  
+  
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Marcus Surjopolos Web Services builds fast, custom websites for Atlanta-area businesses and optimizes them to rank in local Google search. No templates, no page builders — hand-built sites that bring in customers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Marcus Surjopolos Web Services",
+    "areaServed": { "@type": "City", "name": "Atlanta, GA" },
+    "description": "Custom web design and local SEO for Atlanta-area small businesses.",
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <!-- <span class="logo-mark">M</span> -->
+    <span class="brand-stack">
+      <span class="brand-name">Marcus Surjopolos</span>
+      <span class="brand-sub">Web Services</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="tel:5623489755" class="nav-phone"><i class="bi bi-telephone-fill"></i><span>770-744-1961</span></a>
+    <a href="#contact" class="btn-nav-solid">Get a Free Quote</a>
+    <button class="nav-burger" onclick="toggleMobileNav()" aria-label="Open menu"><i class="bi bi-list"></i></button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV PANEL -->
+<div class="mobile-nav-overlay" id="mobile-nav" onclick="handleMobileNavOverlay(event)">
+  <div class="mobile-nav-panel">
+    <div class="mobile-nav-top">
+      <a href="#home" class="nav-logo" onclick="closeMobileNav()">
+        <span class="brand-stack mobile-brand-stack">
+          <span class="brand-name">Marcus Surjopolos</span>
+          <span class="brand-sub">Web Services</span>
+        </span>
+      </a>
+      <button class="nav-x" onclick="closeMobileNav()" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
+      <li><a href="#work" onclick="closeMobileNav()">Our Work</a></li>
+      <li><a href="#about" onclick="closeMobileNav()">About</a></li>
+      <li><a href="#reviews" onclick="closeMobileNav()">Reviews</a></li>
+      <li><a href="#faq" onclick="closeMobileNav()">FAQ</a></li>
+    </ul>
+    <a href="tel:5623489755" class="mobile-nav-phone"><i class="bi bi-telephone-fill"></i>770-744-1961</a>
+    <a href="#contact" class="btn-nav-solid mobile-nav-cta" onclick="closeMobileNav()">Get a Free Quote →</a>
+  </div>
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="tel:5623489755" class="sticky-cta-call" aria-label="Call us"><i class="bi bi-telephone-fill"></i></a>
+  <a href="#contact" class="sticky-cta-btn" onclick="go('contact')">Get a Free Quote →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero no-promo" id="home">
+  <div class="hero-grid">
+    <div class="hero-left reveal">
+      <div class="hero-badge-light"><span class="badge-dot-blue"></span>Low Starting Cost · Metro Atlanta</div>
+      <h1 class="hero-title">A website that gets <em>found</em>,<br>without the <em>big price tag</em>.</h1>
+      <p class="hero-sub-light">Get more calls, bookings, and sales from Google search — with a solid SEO foundation, a low starting cost, and one predictable monthly plan for hosting, updates, and support. We handle everything, so you don't have to.</p>
+      <div class="hero-stars">★★★★★ <strong>5.0</strong> <span>average rating from local clients</span></div>
+      <ul class="hero-checklist">
+        <li><span class="check-ico">✓</span>Solid SEO foundation on every site, so Atlanta customers can find you on Google</li>
+        <li><span class="check-ico">✓</span>Low starting cost, with one predictable monthly plan — no surprise bills</li>
+        <li><span class="check-ico">✓</span>We handle hosting, updates, and security every month, so you don't have to</li>
+        <li><span class="check-ico">✓</span>Take bookings and sell products from day one</li>
+      </ul>
+    </div>
+    <!-- <div class="hero-right reveal">
+      <div class="deal-card">
+        <div class="deal-top">
+          <span class="deal-badge"><span class="flame">🔥</span>Flash Deal · Ends This Week</span>
+          <div class="deal-price">
+            <span class="deal-was">$800</span>
+            <span class="deal-now">$400</span>
+            <span class="deal-pct">-50%</span>
+          </div>
+          <p class="deal-save">You save <strong>$400</strong> on your website launch</p>
+          <div class="deal-timer">
+            <div><span id="t-days">--</span><label>Days</label></div>
+            <span class="timer-colon">:</span>
+            <div><span id="t-hrs">--</span><label>Hrs</label></div>
+            <span class="timer-colon">:</span>
+            <div><span id="t-min">--</span><label>Min</label></div>
+            <span class="timer-colon">:</span>
+            <div><span id="t-sec">--</span><label>Sec</label></div>
+          </div>
+        </div>
+        <div class="deal-bottom">
+          <label class="deal-label">Your email address</label>
+          <input class="field deal-field" type="email" placeholder="you@yourbusiness.com" />
+          <button class="btn-submit deal-btn" onclick="go('contact')">Get Started →</button>
+          <p class="deal-note">Takes 15 seconds.</p>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+<!-- SERVICES — white -->
+<section class="bg-white" id="services">
+  <div class="max-w compare-wrap">
+    <div class="text-center reveal">
+      <span class="live-badge"><span class="live-dot"></span>Simple, Honest Pricing</span>
+      <h2 class="heading">A low starting cost.<br><em>One predictable plan.</em></h2>
+      <p class="section-body" style="margin:0 auto;">No hidden fees, no confusing quotes. Every plan includes hosting, a solid SEO foundation, and a real person you can call — pick what fits your business today.</p>
+    </div>
+
+    <div class="compare-scroll reveal">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="compare-label"></th>
+            <th>Starter</th>
+            <th class="compare-best"><span class="best-tag">Best Value</span>Business</th>
+            <th>Growth &amp; Ecommerce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Professionally designed website</td>
+            <td class="ck">✓</td><td class="ck best">✓</td><td class="ck">✓</td>
+          </tr>
+          <tr>
+            <td>Website pages</td>
+            <td class="val">Up to 3</td><td class="val best">Up to 6</td><td class="val">Custom, unlimited</td>
+          </tr>
+          <tr>
+            <td>Online store, bookings &amp; blog</td>
+            <td class="xx">—</td>
+            <td class="val best">Store link, blog &amp; booking tools connected to your site</td>
+            <td class="val">Full online store built right into your site</td>
+          </tr>
+          <tr>
+            <td>Solid on-page SEO foundation</td>
+            <td class="ck">✓</td><td class="ck best">✓</td><td class="ck">✓</td>
+          </tr>
+          <tr>
+            <td>Local SEO &amp; Google Business setup</td>
+            <td class="xx">—</td><td class="ck best">✓</td><td class="ck">✓</td>
+          </tr>
+          <tr>
+            <td>Ongoing SEO tuning &amp; reports</td>
+            <td class="xx">—</td><td class="xx best">—</td><td class="val">Quarterly</td>
+          </tr>
+          <tr>
+            <td>Email &amp; contact tools</td>
+            <td class="val">Simple contact form</td>
+            <td class="val best">Business email + email list signup</td>
+            <td class="val">Adds automated follow-ups + Google Workspace</td>
+          </tr>
+          <tr>
+            <td>Analytics &amp; legal pages</td>
+            <td class="xx">—</td><td class="xx best">—</td><td class="ck">✓</td>
+          </tr>
+          <tr>
+            <td>Monthly care &amp; maintenance</td>
+            <td class="val">Updates, backups &amp; monitoring + 30 min of edits</td>
+            <td class="val best">Same, plus 1 hour of edits a month</td>
+            <td class="val">Same, plus 1.5 hours of edits a month</td>
+          </tr>
+          <tr>
+            <td>Design revision rounds</td>
+            <td class="val">2 rounds</td><td class="val best">3 rounds</td><td class="val">5 rounds</td>
+          </tr>
+          <tr>
+            <td>Launch timeline</td>
+            <td class="val">1–2 weeks</td><td class="val best">3–5 weeks</td><td class="val">6–10 weeks</td>
+          </tr>
+          <tr>
+            <td>Starting price</td>
+            <td class="val price-cell">
+              <span class="renew strike">$800</span>
+              <div class="price-now">$400 <span class="price-suffix">one-time</span></div>
+              <span class="renew">Renews at $39/mo</span>
+            </td>
+            <td class="val best price-cell">
+              <span class="renew strike">$1,200</span>
+              <div class="price-now">$600 <span class="price-suffix">one-time</span></div>
+              <span class="renew">Renews at $59/mo</span>
+            </td>
+            <td class="val price-cell">
+              <span class="renew strike">$2,500</span>
+              <div class="price-now">$1,250 <span class="price-suffix">one-time</span></div>
+              <span class="renew">Renews at $99/mo</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Best for</td>
+            <td class="val">Getting online affordably</td>
+            <td class="val best">Businesses ready to grow</td>
+            <td class="val">Selling online at scale</td>
+          </tr>
+          <tr class="compare-cta-row">
+            <td></td>
+            <td><a href="#contact" class="btn-outline-brand" onclick="go('contact')">Get Started</a></td>
+            <td class="best"><a href="#contact" class="btn-solid" onclick="go('contact')">Get Started →</a></td>
+            <td><a href="#contact" class="btn-outline-brand" onclick="go('contact')">Talk to Us</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="guarantee-line reveal"><i class="bi bi-shield-check"></i>Not happy with your first draft? We'll revise it until you are — that's our guarantee.</p>
+  </div>
+</section>
+
+<!-- ABOUT — grey -->
+<section class="bg-grey" id="about">
+  <div class="max-w" style="max-width: 900px;">
+    <div class="about-grid reveal">
+      <div class="about-photo">
+        <div class="about-avatar">M</div>
+      </div>
+      <div class="about-text">
+        <span class="section-eyebrow">About</span>
+        <h2 class="heading" style="font-size: clamp(2rem, 4.5vw, 2.8rem);">Hi, I'm Marcus.</h2>
+        <p class="section-body">I design, build, and personally support every site Marcus Surjopolos Web Services launches. When you call, you're talking directly to the person who built your site — not a call center or a rotating account manager.</p>
+        <p class="section-body">I'm based right here in the Atlanta area, and I started this because too many small business owners get stuck: agencies quote too high, and DIY builders never quite get finished. My goal is simple — get you a site that actually works for your business, at a price that makes sense, and be someone you can actually reach when something needs to change.</p>
+        <a href="tel:5623489755" class="about-phone"><i class="bi bi-telephone-fill"></i>770-744-1961</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO — white -->
+<section class="bg-white" id="work">
+  <div class="max-w">
+    <div class="text-center reveal">
+      <span class="live-badge"><span class="live-dot"></span>Live Customer Sites</span>
+      <h2 class="heading">See the sites<br>we've built.</h2>
+      <p class="section-body" style="margin:0 auto;">Every one of these is a real, live site for a real business. Click any project to preview it.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card reveal" onclick="openPreview('Barn Dog','E-commerce Store','pf-1','https://thebarndog.org/')">
+        <div class="portfolio-thumb pf-1"><span>Barn Dog</span></div>
+        <div class="portfolio-meta"><div><strong>Barn Dog</strong><span>E-commerce Store</span></div><span class="portfolio-preview">Preview →</span></div>
+      </div>
+      <div class="portfolio-card reveal" onclick="openPreview('Wellspring Media','Post Production Company','pf-2','https://www.wellspringmedia.net/')">
+        <div class="portfolio-thumb pf-2"><span>Wellspring Media</span></div>
+        <div class="portfolio-meta"><div><strong>Wellspring Media</strong><span>Post Production Company</span></div><span class="portfolio-preview">Preview →</span></div>
+      </div>
+      <div class="portfolio-card reveal" onclick="openPreview('Love Day Event','Festival Landing Page','pf-3','https://www.lovedayevent.com/')">
+        <div class="portfolio-thumb pf-3"><span>Love Day Event</span></div>
+        <div class="portfolio-meta"><div><strong>Love Day Event</strong><span>Festival Landing Page</span></div><span class="portfolio-preview">Preview →</span></div>
+      </div>
+      <div class="portfolio-card reveal" onclick="openPreview('MidSouth Tea Party Rental','Tea Party Rental','pf-4','https://midsouthteapartyrental.com/')">
+        <div class="portfolio-thumb pf-4"><span>MidSouth Tea Party Rental</span></div>
+        <div class="portfolio-meta"><div><strong>MidSouth Tea Party Rental</strong><span>Tea Party Rental</span></div><span class="portfolio-preview">Preview →</span></div>
+      </div>
+      <div class="portfolio-card reveal" onclick="openPreview('King Jesus Clothing','E-commerce Store','pf-5','https://kingjesusclothing.org/')">
+        <div class="portfolio-thumb pf-5"><span>King Jesus Clothing</span></div>
+        <div class="portfolio-meta"><div><strong>King Jesus Clothing</strong><span>E-commerce Store</span></div><span class="portfolio-preview">Preview →</span></div>
+      </div>
+      <div class="portfolio-card reveal" onclick="openPreview('Bolo Flex Staff','Tech Startup Landing Page','pf-6','https://bolo-flex-landing.vercel.app/')">
+        <div class="portfolio-thumb pf-6"><span>Bolo Flex Staff</span></div>
+        <div class="portfolio-meta"><div><strong>Bolo Flex Staff</strong><span>Tech Startup Landing Page</span></div><span class="portfolio-preview">Preview →</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO PREVIEW MODAL -->
+<div class="overlay" id="preview-modal" onclick="handlePreviewOverlay(event)">
+  <div class="modal preview-modal">
+    <button class="modal-x" onclick="closePreview()">✕</button>
+    <div class="desktop-mockup">
+      <div class="browser-chrome">
+        <div class="chrome-dots">
+          <div class="chrome-dot"></div>
+          <div class="chrome-dot"></div>
+          <div class="chrome-dot"></div>
+        </div>
+        <div class="chrome-url" id="preview-url"></div>
+      </div>
+      <div class="screenshot-area preview-area">
+        <iframe id="preview-frame" title="Project preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="screenshot-placeholder" id="preview-thumb">
+          <div class="placeholder-icon">🖥️</div>
+          <strong id="preview-name"></strong>
+          <span id="preview-category"></span>
+        </div>
+      </div>
+    </div>
+    <p class="preview-note">Built in collaboration with the business owner to bring their vision online.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS — white -->
+<section class="bg-white" id="how">
+  <div class="max-w">
+    <div class="text-center reveal">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="heading">From first call to live site<br>in weeks, not months.</h2>
+      <p class="section-body">We keep the process simple so you can stay focused on running your business.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-tag">Step 01</span>
+        <h3>Discovery Call</h3>
+        <p>Tell us about your business, your customers, and what's not working on your current site — or that you don't have one yet. Takes about 15 minutes.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-tag">Step 02</span>
+        <h3>Design & Build</h3>
+        <p>We design and build your site around your brand, with a solid SEO foundation from day one — clean, fast, and ready to grow with a plan that fits your budget.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-tag">Step 03</span>
+        <h3>Launch & Rank</h3>
+        <p>We launch your site optimized for local search and set up your Google Business Profile, so Atlanta customers can actually find you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS CAROUSEL — grey
+<section class="bg-grey reviews-section" id="reviews">
+  <div class="reviews-header reveal">
+    <span class="section-eyebrow">What Local Business Owners Are Saying</span>
+    <h2 class="heading">Trusted by businesses<br>across the metro area.</h2>
+  </div>
+
+  <div class="carousel-track-wrap">
+    <div class="carousel-track" id="carousel">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Our old site never showed up in searches. Within a couple months of the relaunch we were ranking for our main service terms and getting calls from it every week."</p>
+        <div class="review-author">
+          <div class="review-avatar av-1">RT</div>
+          <div><div class="review-name">Renee T.</div><div class="review-role">Owner, boutique — Decatur, GA</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They actually explained what they were doing instead of just handing us a template. The site looks nothing like our competitors' and it loads instantly."</p>
+        <div class="review-author">
+          <div class="review-avatar av-2">JM</div>
+          <div><div class="review-name">Jordan M.</div><div class="review-role">Owner, HVAC company — Marietta, GA</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"We'd tried a cheap builder site for two years with nothing to show for it. MDS rebuilt it from scratch and we started showing up on the map pack within weeks."</p>
+        <div class="review-author">
+          <div class="review-avatar av-3">CB</div>
+          <div><div class="review-name">Carla B.</div><div class="review-role">Owner, salon — Alpharetta, GA</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Fast to respond, clear about pricing, and the site has genuinely paid for itself. I recommend them to every other small business owner I know."</p>
+        <div class="review-author">
+          <div class="review-avatar av-4">DP</div>
+          <div><div class="review-name">David P.</div><div class="review-role">Owner, auto shop — Atlanta, GA</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Our old site never showed up in searches. Within a couple months of the relaunch we were ranking for our main service terms and getting calls from it every week."</p>
+        <div class="review-author">
+          <div class="review-avatar av-1">RT</div>
+          <div><div class="review-name">Renee T.</div><div class="review-role">Owner, boutique — Decatur, GA</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They actually explained what they were doing instead of just handing us a template. The site looks nothing like our competitors' and it loads instantly."</p>
+        <div class="review-author">
+          <div class="review-avatar av-2">JM</div>
+          <div><div class="review-name">Jordan M.</div><div class="review-role">Owner, HVAC company — Marietta, GA</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"We'd tried a cheap builder site for two years with nothing to show for it. MDS rebuilt it from scratch and we started showing up on the map pack within weeks."</p>
+        <div class="review-author">
+          <div class="review-avatar av-3">CB</div>
+          <div><div class="review-name">Carla B.</div><div class="review-role">Owner, salon — Alpharetta, GA</div></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Fast to respond, clear about pricing, and the site has genuinely paid for itself. I recommend them to every other small business owner I know."</p>
+        <div class="review-author">
+          <div class="review-avatar av-4">DP</div>
+          <div><div class="review-name">David P.</div><div class="review-role">Owner, auto shop — Atlanta, GA</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- FAQ — white -->
+<section class="bg-white" id="faq">
+  <div class="max-w" style="max-width: 760px;">
+    <div class="text-center reveal">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="heading">Questions? Answers.</h2>
+      <p class="section-body" style="margin:0 auto;">The most common things Atlanta business owners ask us before getting started.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How long does it actually take to launch?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Starter sites typically launch in 1–2 weeks from our discovery call. Business and Growth & Ecommerce builds take a bit longer since there's more to set up, and we'll give you a firm timeline before any work starts.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do I own my website when it's finished?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes. The site, domain, and content are yours. There's no lock-in — if you ever want to move hosting elsewhere, we'll help you make the move.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Are there any hidden fees?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>No. The price you see on the pricing table is the price you pay — a low one-time cost to launch, then one flat monthly rate that's the same every month. No surprise charges later.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What's the monthly fee actually for?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Think of it as a care plan for your site: hosting, security updates, backups, and a set amount of edits every month. We handle everything so you don't have to think about your website — just call or email us when something needs to change.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What happens if I need changes after launch?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Every plan includes revision rounds before launch, and your monthly care plan includes ongoing edits after that. Need more than your plan covers? We quote small, flat-rate updates — never a surprise invoice.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you handle my domain and hosting?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes, every plan includes domain setup, fast secure hosting, and SSL. We handle the technical side so you don't have to think about it.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do you only work with businesses in Atlanta?</span><span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Atlanta is our focus and where our local SEO expertise shines brightest, but we work with small businesses across the metro area and beyond. Reach out and we'll tell you honestly if we're a good fit.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT — grey -->
+<section class="bg-grey" id="contact">
+  <div class="signup-wrap">
+    <div class="signup-card reveal">
+      <span class="section-eyebrow" style="display:block;margin-bottom:12px;">Get Started Free</span>
+      <h2 class="heading">Ready to get found in Atlanta?</h2>
+      <p>Tell us a bit about your business and we'll send back ideas and a free quote — no obligation.</p>
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <input class="field" id="business-name" name="businessName" type="text" placeholder="Business Name" required />
+        <input class="field" id="email" name="email" type="email" placeholder="Email" required />
+        <input class="field" id="phone" name="phone" type="tel" placeholder="Phone Number" />
+        <textarea class="field" id="message" name="message" placeholder="What does your business do, and what do you need help with?" rows="3"></textarea>
+        <button class="btn-submit" type="submit">Get My Free Quote →</button>
+      </form>
+      <div class="form-success" id="form-success">Thanks! We'll be in touch with you soon!</div>
+      <p class="form-note">Free consultation · No obligation</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">
+    <!-- <span class="logo-mark">M</span> -->
+    <span class="brand-stack footer-brand-stack">
+      <span class="brand-name">Marcus Surjopolos</span>
+      <span class="brand-sub">Web Services</span>
+    </span>
+  </div>
+  <div class="footer-contact">
+    <a href="tel:7707441961">770-744-1961</a>
+    <a href="mailto:contact@mswebservices.org">contact@mswebservices.org</a>
+  </div>
+  <div class="foot-links">
+    <a href="#how">How It Works</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Get a Quote</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+  
+  <p class="foot-copy">© 2026 Marcus Surjopolos Web Services. All rights reserved. Serving Atlanta, GA and the surrounding metro area.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
