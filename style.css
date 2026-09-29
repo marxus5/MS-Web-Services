@@ -620,10 +620,10 @@
       background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 60%);
     }
     .pf-1 { background: url('img/thebarndogsc.png') center/cover; }
-    .pf-2 { background: url('img/wellspringmediasc.png') center/cover; }
+    .pf-2 { background: url('img/WellSpringMediaSc.png') center/cover; }
     .pf-3 { background: url('img/lovedayeventsc.png') center/cover; }
     .pf-4 { background: url('img/MSTPRSc.png') center/cover; }
-    .pf-5 { background: url('img/kingjesusclothingsc.png') center/cover; }
+    .pf-5 { background: url('img/KingJesusClothingSc.png') center/cover; }
     .pf-6 { background: url('img/boloflexsc.png') center/cover; }
     .portfolio-meta {
       display: flex; align-items: center; justify-content: space-between;
