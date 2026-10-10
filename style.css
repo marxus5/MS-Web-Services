@@ -41,7 +41,11 @@
       padding-left: 24px; padding-right: 24px;
       background: transparent;
       border-bottom: 1px solid transparent;
-      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, transform 0.25s ease;
+      transform: translateY(0);
+    }
+    nav.hidden {
+      transform: translateY(-120%);
     }
     nav.scrolled {
       background: rgba(255,255,255,0.85);
@@ -273,7 +277,7 @@
 
     /* ── FLASH DEAL CARD ── */
     .deal-card {
-      width: 90%; max-width: 540px; border-radius: 18px; overflow: hidden;
+      width: min(90vw, 680px); max-width: 100%; border-radius: 18px; overflow: hidden;
       border: 1px solid var(--grey-border);
       box-shadow: 0 24px 60px rgba(0,0,0,0.12);
       background: var(--white);
@@ -290,10 +294,10 @@
       letter-spacing: 0.05em; text-transform: uppercase; color: #fff; margin-bottom: 22px;
     }
     .flame { font-size: 0.95rem; }
-    .deal-price { display: flex; align-items: baseline; justify-content: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
-    .deal-was { font-size: 1.3rem; color: rgba(255,255,255,0.4); text-decoration: line-through; }
+    .deal-price { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; margin-bottom: 10px; }
+    .deal-was { font-size: 1.05rem; color: rgba(255,255,255,0.55); text-decoration: line-through; }
     .deal-now { font-size: 3.4rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; }
-    .deal-pct { background: #fbbf24; color: #151515; font-size: 0.85rem; font-weight: 800; padding: 4px 10px; border-radius: 7px; }
+    .deal-pct { background: #fbbf24; color: #151515; font-size: 0.85rem; font-weight: 800; padding: 4px 10px; border-radius: 7px; margin-top: 6px; }
     .deal-save { font-size: 1.05rem; color: rgba(255,255,255,0.75); margin-bottom: 24px; }
     .deal-save strong { color: #fff; }
     .deal-timer { display: flex; align-items: baseline; justify-content: center; gap: 14px; }
@@ -305,6 +309,15 @@
     .deal-label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--text-dark); margin-bottom: 9px; }
     .deal-field { margin-bottom: 16px; }
     .deal-note { text-align: center; font-size: 0.82rem; color: var(--text-light); margin-top: 12px; }
+
+    @media (min-width: 900px) {
+      .deal-card { width: 100%; max-width: 500px; }
+      .deal-top { padding: 28px 24px; }
+      .deal-badge { margin-bottom: 16px; }
+      .deal-was { font-size: 1.05rem; }
+      .deal-now { font-size: 2.8rem; }
+      .deal-bottom { padding: 22px 24px; }
+    }
 
     /* ── HERO VISUAL ── */
     .hero-visual {
@@ -441,6 +454,7 @@
     .compare-scroll {
       margin-top: 52px; overflow-x: auto; border-radius: 16px;
       border: 1px solid var(--grey-border); box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      -webkit-overflow-scrolling: touch;
     }
     .compare-table { width: 100%; border-collapse: collapse; min-width: 680px; background: var(--white); }
     .compare-table thead th {
@@ -449,6 +463,13 @@
       letter-spacing: -0.01em;
     }
     .compare-table thead th.compare-label { background: var(--white); }
+    .compare-table thead th:first-child,
+    .compare-table tbody td:first-child {
+      position: sticky; left: 0; z-index: 2; background: var(--white);
+    }
+    .compare-table thead th:first-child {
+      z-index: 3;
+    }
     .compare-table thead th.compare-best { background: var(--dark-light); color: #fff; position: relative; padding-top: 34px; }
     .best-tag {
       position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
@@ -471,6 +492,22 @@
     .price-now { font-size: 1.15rem; font-weight: 800; color: var(--text-dark); }
     .price-suffix { font-size: 0.72rem; font-weight: 500; color: var(--text-mid); }
     .compare-table td.best { background: rgba(65,105,225,0.06); }
+    @media (max-width: 767px) {
+      .compare-scroll { border-radius: 12px; }
+      .compare-table { min-width: 600px; }
+      .compare-table thead th,
+      .compare-table tbody td {
+        padding-left: 10px; padding-right: 10px;
+        font-size: 0.74rem;
+      }
+      .compare-table thead th:first-child,
+      .compare-table tbody td:first-child {
+        min-width: 170px;
+        box-shadow: 4px 0 12px rgba(0,0,0,0.04);
+      }
+      .compare-table tbody td:first-child { font-size: 0.76rem; }
+      .price-now { font-size: 0.98rem; }
+    }
     .guarantee-line {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       text-align: center; font-size: 0.85rem; font-weight: 600; color: var(--text-mid);
@@ -496,12 +533,25 @@
       display: grid; gap: 32px; grid-template-columns: 1fr; align-items: center; text-align: center;
     }
     @media (min-width: 700px) { .about-grid { grid-template-columns: 180px 1fr; text-align: left; } }
-    .about-photo { display: flex; justify-content: center; }
+    .about-photo {
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+     }
+
     .about-avatar {
-      width: 150px; height: 150px; border-radius: 50%;
-      background: linear-gradient(155deg, var(--dark) 0%, var(--blue) 130%);
-      color: #fff; display: flex; align-items: center; justify-content: center;
-      font-size: 3.2rem; font-weight: 800; box-shadow: 0 14px 32px rgba(0,0,0,0.15); flex-shrink: 0;
+      width: 200px; 
+      height: 200px; 
+      border-radius: 50%;
+      display: block;
+      background-image: url("img/marcus-surjopolos-web-services-headshot.webp");
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      font-size: 3.2rem; 
+      font-weight: 800; 
+      box-shadow: 0 14px 32px rgba(0,0,0,0.15); 
+      flex-shrink: 0;
     }
     .about-text .section-body { max-width: 560px; margin: 0 auto 14px; }
     @media (min-width: 700px) { .about-text .section-body { margin-left: 0; margin-right: 0; } }

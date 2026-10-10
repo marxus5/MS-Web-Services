@@ -86,31 +86,23 @@ function go(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Nav fades in once the page scrolls past the top of the hero
+  // Nav hides after scrolling down, reappears when scrolling up.
   const nav = document.querySelector('nav');
-  function updateNavScroll() {
-    if (window.scrollY > 24) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
-  }
-  window.addEventListener('scroll', updateNavScroll);
-  updateNavScroll();
+  let lastScrollY = window.scrollY;
 
-  // Flash deal countdown — counts down to the end of the current week
-  function updateDealTimer() {
-    const now = new Date();
-    const target = new Date(now);
-    target.setDate(now.getDate() + (7 - now.getDay()));
-    target.setHours(23, 59, 59, 0);
-    let diff = Math.max(0, target - now);
-    const days = Math.floor(diff / 86400000); diff -= days * 86400000;
-    const hrs  = Math.floor(diff / 3600000);  diff -= hrs * 3600000;
-    const min  = Math.floor(diff / 60000);    diff -= min * 60000;
-    const sec  = Math.floor(diff / 1000);
-    const pad = n => String(n).padStart(2, '0');
-    document.getElementById('t-days').textContent = pad(days);
-    document.getElementById('t-hrs').textContent  = pad(hrs);
-    document.getElementById('t-min').textContent  = pad(min);
-    document.getElementById('t-sec').textContent  = pad(sec);
+  function updateNavScroll() {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 24 && currentScrollY > lastScrollY) {
+      nav.classList.add('hidden');
+      nav.classList.remove('scrolled');
+    } else {
+      nav.classList.remove('hidden');
+      if (currentScrollY > 24) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    }
+
+    lastScrollY = currentScrollY;
   }
-  updateDealTimer();
-  setInterval(updateDealTimer, 1000);
+  window.addEventListener('scroll', updateNavScroll, { passive: true });
+  updateNavScroll();
