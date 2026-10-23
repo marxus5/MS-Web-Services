@@ -604,6 +604,10 @@
       padding: 15px; border-radius: 9px; margin-top: 4px; transition: background 0.15s;
     }
     .btn-submit:hover { background: var(--blue-hover); }
+    .btn-submit:disabled { opacity: 0.7; cursor: wait; }
+    .form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+    .form-error { display: none; color: #b91c1c; font-size: 0.85rem; margin-top: 12px; }
+    .form-error:not(:empty) { display: block; }
     @media (max-width: 480px) {
       .signup-card { padding: 40px 24px; }
     }

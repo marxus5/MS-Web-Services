@@ -488,13 +488,18 @@
       <h2 class="heading">Ready to get found in Atlanta?</h2>
       <p>Tell us a bit about your business and we'll send back ideas and a free quote — no obligation.</p>
       <form id="contact-form" onsubmit="handleSubmit(event)">
-        <input class="field" id="business-name" name="businessName" type="text" placeholder="Business Name" required />
-        <input class="field" id="email" name="email" type="email" placeholder="Email" required />
-        <input class="field" id="phone" name="phone" type="tel" placeholder="Phone Number" />
-        <textarea class="field" id="message" name="message" placeholder="What does your business do, and what do you need help with?" rows="3"></textarea>
+        <input class="field" id="name" name="name" type="text" placeholder="Name" maxlength="120" required />
+        <input class="field" id="email" name="email" type="email" placeholder="Email" maxlength="254" required />
+        <input class="field" id="phone" name="phone" type="tel" placeholder="Phone Number" maxlength="40" required />
+        <textarea class="field" id="message" name="message" placeholder="What does your business do, and what do you need help with?" rows="3" maxlength="5000"></textarea>
+        <div class="form-trap" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
         <button class="btn-submit" type="submit">Get My Free Quote →</button>
       </form>
-      <div class="form-success" id="form-success">Thanks! We'll be in touch with you soon!</div>
+      <div class="form-error" id="form-error" role="alert" aria-live="assertive"></div>
+      <div class="form-success" id="form-success" role="status" aria-live="polite">Thanks! We'll be in touch with you soon!</div>
       <p class="form-note">Free consultation · No obligation</p>
     </div>
   </div>
@@ -511,7 +516,7 @@
   </div>
   <div class="footer-contact">
     <a href="tel:7707441961">770-744-1961</a>
-    <a href="mailto:contact@mswebservices.org">contact@mswebservices.org</a>
+    <a href="mailto:marcus@mswebservices.org">marcus@mswebservices.org</a>
   </div>
   <div class="foot-links">
     <a href="#how">How It Works</a>
