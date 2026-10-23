@@ -43,28 +43,35 @@ function go(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closePreview(); closeMobileNav(); } });
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const form = document.getElementById('contact-form');
-    const businessName = document.getElementById('business-name')?.value?.trim() || 'Not provided';
-    const email = document.getElementById('email')?.value?.trim() || 'Not provided';
-    const phone = document.getElementById('phone')?.value?.trim() || 'Not provided';
-    const message = document.getElementById('message')?.value?.trim() || 'No additional details provided';
-    const recipient = 'contact@mswebservices.org';
+    const submitButton = form.querySelector('button[type="submit"]');
+    const errorMessage = document.getElementById('form-error');
+    const successMessage = document.getElementById('form-success');
+    errorMessage.textContent = '';
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
 
-    const subject = encodeURIComponent('New Website Quote request from ' + businessName);
-    const body = encodeURIComponent(
-      'Business Name: ' + businessName + '\n' +
-      'Email: ' + email + '\n' +
-      'Phone: ' + phone + '\n\n' +
-      'Project details:\n' + message
-    );
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
 
-    window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + body;
+      if (!response.ok) {
+        throw new Error('The contact form could not be sent.');
+      }
 
-    form.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+      form.style.display = 'none';
+      successMessage.style.display = 'block';
+    } catch (error) {
+      errorMessage.textContent = 'Sorry, your message could not be sent. Please try again or email marcus@mswebservices.org.';
+      submitButton.disabled = false;
+      submitButton.textContent = 'Get My Free Quote →';
+    }
   }
 
   function toggleFaq(btn) {
