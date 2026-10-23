@@ -15,18 +15,18 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { businessName, email, phone, message, website } = req.body || {};
+  const { name, email, phone, message, website } = req.body || {};
   if (typeof website === 'string' && website.trim()) {
     return res.status(200).json({ ok: true });
   }
 
-  const cleanBusinessName = cleanSingleLine(businessName, 120);
+  const cleanName = cleanSingleLine(name, 120);
   const cleanEmail = cleanSingleLine(email, 254);
   const cleanPhone = cleanSingleLine(phone, 40);
   const cleanMessage = typeof message === 'string' ? message.trim().slice(0, 5000) : '';
 
-  if (!cleanBusinessName || !emailPattern.test(cleanEmail)) {
-    return res.status(400).json({ error: 'Please provide a business name and valid email.' });
+  if (!cleanName || !emailPattern.test(cleanEmail) || !cleanPhone) {
+    return res.status(400).json({ error: 'Please provide your name, a valid email, and phone number.' });
   }
 
   const user = process.env.GMAIL_USER;
@@ -48,9 +48,9 @@ module.exports = async function handler(req, res) {
       from: `Marcus Surjopolos Web Services <${user}>`,
       to: recipient,
       replyTo: cleanEmail,
-      subject: `New Website Quote request from ${cleanBusinessName}`,
+      subject: `New Website Quote request from ${cleanName}`,
       text: [
-        `Business Name: ${cleanBusinessName}`,
+        `Name: ${cleanName}`,
         `Email: ${cleanEmail}`,
         `Phone: ${cleanPhone || 'Not provided'}`,
         '',
