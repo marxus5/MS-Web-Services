@@ -30,6 +30,27 @@ function go(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}
   function handlePreviewOverlay(e) {
     if (e.target === document.getElementById('preview-modal')) closePreview();
   }
+  let pricingModalTrigger = null;
+  function openPricingModal(trigger) {
+    const modal = document.getElementById('pricing-modal');
+    pricingModalTrigger = trigger;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.modal-x').focus();
+  }
+  function closePricingModal() {
+    const modal = document.getElementById('pricing-modal');
+    if (!modal.classList.contains('open')) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (pricingModalTrigger) pricingModalTrigger.focus();
+    pricingModalTrigger = null;
+  }
+  function handlePricingOverlay(e) {
+    if (e.target === document.getElementById('pricing-modal')) closePricingModal();
+  }
   function toggleMobileNav() {
     document.getElementById('mobile-nav').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -41,15 +62,16 @@ function go(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}
   function handleMobileNavOverlay(e) {
     if (e.target.id === 'mobile-nav') closeMobileNav();
   }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closePreview(); closeMobileNav(); } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { closePreview(); closeMobileNav(); closePricingModal(); } });
 
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const form = document.getElementById('contact-form');
+    const form = e.currentTarget;
+    const card = form.closest('.signup-card');
     const submitButton = form.querySelector('button[type="submit"]');
-    const errorMessage = document.getElementById('form-error');
-    const successMessage = document.getElementById('form-success');
+    const errorMessage = card.querySelector('.form-error');
+    const successMessage = card.querySelector('.form-success');
     errorMessage.textContent = '';
     submitButton.disabled = true;
     submitButton.textContent = 'Sending…';
@@ -76,7 +98,8 @@ function go(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}
 
   function toggleFaq(btn) {
     const item = btn.closest('.faq-item');
-    item.classList.toggle('open');
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
   }
 
   const hero = document.querySelector('.hero');

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Website + Social Media Plans | Marcus Surjopolos Web Services</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="canonical" href="https://mswebservices.org/website-marketing">
+  <meta name="description" content="One monthly price for a custom website and managed social media. Hosting, maintenance, SEO setup, and weekly posts handled for you." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <span class="brand-stack">
+      <span class="brand-name">Marcus Surjopolos</span>
+      <span class="brand-sub">Web Services</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#services">Website Plans</a></li>
+    <li><a href="website-marketing.html">Marketing Plans</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#work">Our Work</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="tel:7707441961" class="nav-phone"><i class="bi bi-telephone-fill"></i><span>770-744-1961</span></a>
+    <a href="#contact" class="btn-nav-solid">Get a Free Quote</a>
+    <button class="nav-burger" onclick="toggleMobileNav()" aria-label="Open menu"><i class="bi bi-list"></i></button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV PANEL -->
+<div class="mobile-nav-overlay" id="mobile-nav" onclick="handleMobileNavOverlay(event)">
+  <div class="mobile-nav-panel">
+    <div class="mobile-nav-top">
+      <a href="../index.html" class="nav-logo" onclick="closeMobileNav()">
+        <span class="brand-stack mobile-brand-stack">
+          <span class="brand-name">Marcus Surjopolos</span>
+          <span class="brand-sub">Web Services</span>
+        </span>
+      </a>
+      <button class="nav-x" onclick="closeMobileNav()" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="/#services" onclick="closeMobileNav()">Website Plans</a></li>
+      <li><a href="website-marketing.html" onclick="closeMobileNav()">Marketing Plans</a></li>
+      <li><a href="/#about" onclick="closeMobileNav()">About</a></li>
+      <li><a href="/#work" onclick="closeMobileNav()">Our Work</a></li>
+      <li><a href="/#faq" onclick="closeMobileNav()">FAQ</a></li>
+    </ul>
+    <a href="tel:7707441961" class="mobile-nav-phone"><i class="bi bi-telephone-fill"></i>770-744-1961</a>
+    <a href="#contact" class="btn-nav-solid mobile-nav-cta">Get a Free Quote →</a>
+  </div>
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="tel:7707441961" class="sticky-cta-call" aria-label="Call us"><i class="bi bi-telephone-fill"></i></a>
+  <a href="#contact" class="sticky-cta-btn">Get a Free Quote →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero no-promo" id="home">
+  <div class="hero-grid">
+    <div class="hero-left reveal">
+      <div class="hero-badge-light"><span class="badge-dot-blue"></span>Website + Marketing Plans</div>
+      <h1 class="hero-title">Your website and social media, <em>handled</em> for one monthly price.</h1>
+      <p class="hero-sub-light">Get a professional website and consistent social media posting from one team. Low starting cost. One predictable monthly investment. We handle everything, so you don't have to.</p>
+      <a href="#contact" class="btn-solid">Get a Free Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS — grey -->
+<section class="bg-grey" id="plans">
+  <div class="max-w">
+    <div class="text-center reveal">
+      <span class="section-eyebrow">Plans</span>
+      <h2 class="heading">Pick the plan<br><em>that fits.</em></h2>
+      <p class="section-body">Each price below is the total monthly cost for your website, hosting, and social media management.</p>
+    </div>
+    <div class="steps marketing-plan-cards">
+      <article class="step reveal marketing-plan-card">
+        <span class="live-badge">Get Online</span>
+        <h3>Starter</h3>
+        <p class="marketing-plan-price"><span class="price-now">$125</span><span class="price-suffix">/mo</span></p>
+        <p class="marketing-plan-price-note">Total monthly price · website + social management</p>
+        <span class="section-eyebrow">What's included</span>
+        <ul class="hero-checklist">
+          <li><span class="check-ico">✓</span>Starter website package (up to 5 pages)</li>
+          <li><span class="check-ico">✓</span>Hosting and maintenance included</li>
+          <li><span class="check-ico">✓</span>Local SEO and Google Business setup</li>
+          <li><span class="check-ico">✓</span>1 social media platform managed</li>
+          <li><span class="check-ico">✓</span>1 post per week</li>
+        </ul>
+        <button class="pricing-details-btn" type="button" aria-haspopup="dialog" aria-controls="pricing-modal" onclick="openPricingModal(this)">See full plan comparison</button>
+        <a href="#contact" class="btn-outline-brand">Get Started</a>
+      </article>
+      <article class="step reveal marketing-plan-card marketing-plan-featured">
+        <span class="live-badge"><span class="live-dot"></span>Most Popular</span>
+        <h3>Business</h3>
+        <p class="marketing-plan-price"><span class="price-now">$399</span><span class="price-suffix">/mo</span></p>
+        <p class="marketing-plan-price-note">Total monthly price · website + social management</p>
+        <span class="section-eyebrow">What's included</span>
+        <ul class="hero-checklist">
+          <li><span class="check-ico">✓</span>Business website package (up to 10 pages)</li>
+          <li><span class="check-ico">✓</span>Hosting and maintenance included</li>
+          <li><span class="check-ico">✓</span>Advanced SEO tuning, analytics, and custom forms</li>
+          <li><span class="check-ico">✓</span>2 social media platforms managed</li>
+          <li><span class="check-ico">✓</span>3 posts per week</li>
+        </ul>
+        <button class="pricing-details-btn" type="button" aria-haspopup="dialog" aria-controls="pricing-modal" onclick="openPricingModal(this)">See full plan comparison</button>
+        <a href="#contact" class="btn-solid">Get Started</a>
+      </article>
+      <article class="step reveal marketing-plan-card">
+        <span class="live-badge">Sell Online</span>
+        <h3>Growth</h3>
+        <p class="marketing-plan-price"><span class="price-now">$699</span><span class="price-suffix">/mo</span></p>
+        <p class="marketing-plan-price-note">Total monthly price · website + social management</p>
+        <span class="section-eyebrow">What's included</span>
+        <ul class="hero-checklist">
+          <li><span class="check-ico">✓</span>Growth and e-commerce website package (custom pages)</li>
+          <li><span class="check-ico">✓</span>Hosting and maintenance included</li>
+          <li><span class="check-ico">✓</span>SEO reports, automation, and full ecommerce features</li>
+          <li><span class="check-ico">✓</span>3 social media platforms managed</li>
+          <li><span class="check-ico">✓</span>5 posts per week</li>
+        </ul>
+        <button class="pricing-details-btn" type="button" aria-haspopup="dialog" aria-controls="pricing-modal" onclick="openPricingModal(this)">See full plan comparison</button>
+        <a href="#contact" class="btn-outline-brand">Get Started</a>
+      </article>
+    </div>
+    <p class="marketing-price-note">These are bundled website + social management prices, not the website-only rates. <a href="/#services">See website-only plans and pricing</a>.</p>
+    <p class="guarantee-line reveal"><i class="bi bi-info-circle" aria-hidden="true"></i>A post is either a video or a static graphic. Paid ad spend is not included. You provide your photos, logos, and access to your accounts.</p>
+  </div>
+</section>
+
+<div class="overlay pricing-overlay" id="pricing-modal" onclick="handlePricingOverlay(event)" aria-hidden="true">
+  <div class="modal pricing-modal" role="dialog" aria-modal="true" aria-labelledby="pricing-modal-title">
+    <button class="modal-x" type="button" onclick="closePricingModal()" aria-label="Close plan comparison">✕</button>
+    <div class="pricing-modal-heading">
+      <span class="section-eyebrow">Website + Social Management</span>
+      <h2 class="heading" id="pricing-modal-title">Compare what's included</h2>
+      <p class="pricing-modal-note">These monthly prices bundle the website plan with social media management. Website-only plans are priced separately.</p>
+    </div>
+    <div class="compare-scroll">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="compare-label">What's included</th>
+            <th>Starter</th>
+            <th class="compare-best"><span class="best-tag">Most Popular</span>Business</th>
+            <th>Growth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Professionally designed website</td><td class="ck">✓</td><td class="ck best">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Basic email and contact form</td><td class="ck">✓</td><td class="ck best">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Local SEO and Google Business setup</td><td class="ck">✓</td><td class="ck best">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Advanced SEO tuning and analytics</td><td class="xx">—</td><td class="ck best">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Custom forms, bookings, and blogs</td><td class="xx">—</td><td class="ck best">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Professional email sending and Google Workspace setup</td><td class="xx">—</td><td class="ck best">✓</td><td class="ck">✓</td></tr>
+          <tr><td>Legal pages</td><td class="xx">—</td><td class="xx best">—</td><td class="ck">✓</td></tr>
+          <tr><td>Hands-free email and phone follow-ups</td><td class="xx">—</td><td class="xx best">—</td><td class="ck">✓</td></tr>
+          <tr><td>AI automation and on-page chatbots</td><td class="xx">—</td><td class="xx best">—</td><td class="ck">✓</td></tr>
+          <tr><td>Ecommerce</td><td class="xx">—</td><td class="value best">Basic store setup</td><td class="value">Full ecommerce experience</td></tr>
+          <tr><td>Ongoing SEO tuning and reports</td><td class="xx">—</td><td class="val best">Bi-yearly</td><td class="val">Quarterly</td></tr>
+          <tr><td>Website package and revisions</td><td class="val">Up to 5 pages<br>2 revision rounds</td><td class="val best">Up to 10 pages<br>3 revision rounds</td><td class="val">Custom pages<br>5 revision rounds</td></tr>
+          <tr><td>Hosting and maintenance</td><td class="val">Updates &amp; monitoring <br>+ 30 min of edits a month</td><td class="val best">Same as Starter plan <br>+ 1 hour of edits a month</td><td class="val">Same as Business plan <br>+ 1.5 hours of edits a month</td></tr>
+          <tr><td>Social media platforms managed</td><td class="val">1 platform</td><td class="val best">2 platforms</td><td class="val">3 platforms</td></tr>
+          <tr><td>Social media posts per week</td><td class="val">1 post</td><td class="val best">3 posts</td><td class="val">5 posts</td></tr>
+          <tr class="pricing-modal-price-row"><td>Total monthly price</td><td class="val"><span class="price-now">$125/mo</span></td><td class="val best"><span class="price-now">$399/mo</span></td><td class="val"><span class="price-now">$699/mo</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-modal-footnote">Paid ad spend is not included. You provide your photos, logos, and access to your accounts. <a href="/#services">View website-only pricing</a>.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS — white -->
+<section class="bg-white" id="how">
+  <div class="max-w">
+    <div class="text-center reveal">
+      <span class="section-eyebrow">How It Works</span>
+      <h2 class="heading">Simple from start<br>to every month after.</h2>
+      <p class="section-body">We keep the process easy so you can stay focused on running your business.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-tag">Step 01</span>
+        <h3>Consultation</h3>
+        <p>We learn about your business, your customers, and what you need. It's a short, friendly call.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-tag">Step 02</span>
+        <h3>Website Build</h3>
+        <p>We design and build your site. You review it and ask for changes within the revision rounds in your plan.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-tag">Step 03</span>
+        <h3>Social Setup &amp; Monthly Management</h3>
+        <p>We set up your social accounts and plan your content. Then we manage your accounts and post for you every month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS — grey -->
+<section class="bg-grey" id="addons">
+  <div class="max-w">
+    <div class="text-center reveal">
+      <span class="section-eyebrow">Add-Ons</span>
+      <h2 class="heading">Need more?</h2>
+      <p class="section-body">Add-ons are available with any plan. Tell us what you need and we'll send you a quote.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-tag">Add-On</span>
+        <h3>Logo Design &amp; Branding Kits</h3>
+        <p>A logo for your business and a branding kit, so everything you share looks consistent.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-tag">Add-On</span>
+        <h3>Graphics</h3>
+        <p>Custom graphics made to match your brand.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-tag">Add-On</span>
+        <h3>Custom Company T-Shirts</h3>
+        <p>Branded shirts for your team or your customers.</p>
+      </div>
+    </div>
+    <div class="guarantee-line reveal"><a href="#contact" class="btn-outline-brand">Ask About Add-Ons →</a></div>
+  </div>
+</section>
+
+<!-- FAQ — white -->
+<!-- <section class="bg-white" id="faq">
+  <div class="max-w" style="max-width: 760px;">
+    <div class="text-center reveal">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="heading">Questions? Answers.</h2>
+      <p class="section-body">Straight answers about how our website and social media plans work.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+          <span>What is a "post"?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1"><p>A post is either a video or a static graphic. Your plan sets how many posts we make for you each week.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+          <span>What happens if I want to cancel?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2"><p>[PLACEHOLDER: Add your cancellation terms here, such as contract length, notice period, and any fees or refunds.]</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+          <span>Can I upgrade later?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3"><p>[PLACEHOLDER: Add your upgrade terms here, such as how to switch plans, when the new price starts, and what changes on the website and social accounts.]</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+          <span>Who owns my content and accounts?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4"><p>[PLACEHOLDER: Add your ownership terms here, such as who owns the website, domain, social accounts, photos, and graphics, and what happens to them if the plan ends.]</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+          <span>Do you guarantee results?</span><span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5"><p>No. Nobody can honestly promise a set number of followers, leads, rankings, or sales. What we focus on is a consistent, professional presence: a well-built website and social accounts that post on schedule. We'll also report on your activity so you can see what we've done each month.</p></div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- CONTACT — grey -->
+<section class="bg-grey" id="contact">
+  <div class="signup-wrap">
+    <div class="signup-card reveal">
+      <span class="section-eyebrow" style="display:block;margin-bottom:12px;">Get Started Free</span>
+      <h2 class="heading">Ready to hand it off?</h2>
+      <p>Tell us a bit about your business and we'll send back ideas and a free quote — no obligation.</p>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <input class="field" name="name" type="text" placeholder="Name" maxlength="120" required />
+        <input class="field" name="email" type="email" placeholder="Email" maxlength="254" required />
+        <input class="field" name="phone" type="tel" placeholder="Phone Number" maxlength="40" required />
+        <label class="field-label" for="marketing-contact-reason">What are you contacting us about?</label>
+        <select class="field" id="marketing-contact-reason" name="reason" required>
+          <option value="" disabled selected>Select a plan or reason</option>
+          <optgroup label="Website plans">
+            <option value="website_starter">Starter — $59/mo (website only)</option>
+            <option value="website_business">Business — $89/mo (website only)</option>
+            <option value="website_growth">Growth &amp; Ecommerce — $149/mo (website only)</option>
+          </optgroup>
+          <optgroup label="Website + social management">
+            <option value="marketing_starter">Starter — $125/mo</option>
+            <option value="marketing_business">Business — $399/mo</option>
+            <option value="marketing_growth">Growth — $699/mo</option>
+          </optgroup>
+          <option value="other">Something else</option>
+        </select>
+        <textarea class="field" name="message" placeholder="What does your business do, and what do you need help with?" rows="3" maxlength="5000"></textarea>
+        <div class="form-trap" aria-hidden="true">
+          <label for="marketing-website">Leave this field empty</label>
+          <input id="marketing-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+        <button class="btn-submit" type="submit">Get My Free Quote →</button>
+      </form>
+      <div class="form-error" role="alert" aria-live="assertive"></div>
+      <div class="form-success" role="status" aria-live="polite">Thanks! We'll be in touch with you soon!</div>
+      <p class="form-note">Free consultation · No obligation</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">
+    <span class="brand-stack footer-brand-stack">
+      <span class="brand-name">Marcus Surjopolos</span>
+      <span class="brand-sub">Web Services</span>
+    </span>
+  </div>
+  <div class="footer-contact">
+    <a href="tel:7707441961">770-744-1961</a>
+    <a href="mailto:marcus@mswebservices.org">marcus@mswebservices.org</a>
+  </div>
+  <div class="foot-links">
+    <a href="/#how">How It Works</a>
+    <a href="/#services">Services</a>
+    <a href="/website-marketing">Marketing Plans</a>
+    <a href="/#reviews">Reviews</a>
+    <a href="#contact">Get a Quote</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </div>
+  <p class="foot-copy">© 2026 Marcus Surjopolos Web Services. All rights reserved. Serving Atlanta, GA and the surrounding metro area.</p>
+</footer>
+<script src="../js/script.js"></script>
+</body>
+</html>
