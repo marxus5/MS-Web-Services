@@ -1,3 +1,6 @@
+import { injectSpeedInsights } from '@vercel/speed-insights';
+injectSpeedInsights();
+
 function go(id) { document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
 
   function openPreview(name, category, colorClass, previewUrl = '') {
