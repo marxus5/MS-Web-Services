@@ -3,10 +3,11 @@ const nodemailer = require('nodemailer');
 const recipient = 'marcus@mswebservices.org';
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const contactReasons = {
-  website_starter: 'Starter website-only plan ($59/mo)',
+  website_starter: 'Starter website-only plan ($39/mo)',
+  website_essentials: 'Essentials website-only plan ($59/mo)',
   website_business: 'Business website-only plan ($89/mo)',
   website_growth: 'Growth & Ecommerce website-only plan ($149/mo)',
-  marketing_starter: 'Starter website + social management plan ($199/mo)',
+  marketing_starter: 'Essentials website + social management plan ($199/mo)',
   marketing_business: 'Business website + social management plan ($399/mo)',
   marketing_growth: 'Growth website + social management plan ($699/mo)',
   other: 'Something else'
